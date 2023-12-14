@@ -1,0 +1,36 @@
+<div style="border: 2px dotted rgb(19, 23, 19);">
+    <h1>Meetings</h1>  <br>
+
+    <h4>List of meetings</h4>
+    <div *ngIf="meeting.length>0;else elseBlock">
+        <table border="2" >
+
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Topic</th>
+                    <th>Number of People</th>
+                    <th>Start time</th>
+                    <th>End time</th>
+                </tr>
+            </thead>
+
+            <tr *ngFor="let meet of meeting; index as i">
+                <td> {{i+1}}</td>
+                <td> {{meet.meetingTopic}}</td>
+                <td> {{meet.NoPpl}}</td>
+                <td> {{meet.start}}</td>
+                <td> {{meet.end}}</td>
+                
+            </tr>
+
+        </table>
+    </div>
+     
+    <ng-template #elseBlock> No Clients !! Add One. </ng-template >
+
+ 
+
+
+
+</div>

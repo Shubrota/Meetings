@@ -1,0 +1,36 @@
+<h1> Create a Meeting Schedule </h1>
+<div>"Please fill this form to create a client"</div>
+<p>---------------------------------------------------------------------------</p>
+<div>
+  <form [formGroup]="meetingForm">
+    <div class="form-group">
+      <table>
+        <tr>
+          <td> Meeting Topic </td>
+
+          <td><input formControlName="topic" id="topic" type="text" />
+
+        </tr>
+        <tr>
+          <td> Number Of People</td>
+          <td><input formControlName="No" id="No" type="text" /></td>
+        </tr>
+        <tr>
+          <td>
+            Start Time </td>
+          <td><input formControlName="start" id="start" type="text" value ="dd/mm/yyyy hh:mm"/></td>
+        </tr>
+        <tr>
+          <td>
+            End time </td>
+
+          <td><input formControlName="end" id="end" type="text" value ="dd/mm/yyyy hh:mm" /></td>
+        </tr>
+        <tr>
+          <button (click)="addMeeting()" class="btn btn-primary">Add Meeting</button>
+        </tr>
+
+      </table>
+    </div>
+  </form>
+</div>

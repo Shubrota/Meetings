@@ -1,0 +1,38 @@
+<div width="50%" style="border: 2px dotted green;">
+   <h1>Client</h1>  <br>
+
+    <h4>List of Clients</h4>
+    <div *ngIf="client.length>0;else elseBlock">
+        <table border="2" >
+
+            <thead>
+                <tr>
+                    <th>Sl No</th>
+                    <th>Client Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Password</th>
+                    
+                </tr>
+            </thead>
+
+            <tr *ngFor="let clientvar of client; index as i">
+                <td> {{i+1}}</td>
+                <td> {{clientvar.clientname}}</td>
+                <td> {{clientvar.cemail}}</td>
+                <td> {{clientvar.Address}}</td>
+                <td> {{clientvar.Password}}</td>
+               
+                
+            </tr>
+
+        </table>
+    </div>
+     
+    <ng-template #elseBlock> No Clients !! Add One. </ng-template >
+
+ 
+
+
+
+</div>

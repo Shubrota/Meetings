@@ -1,0 +1,81 @@
+<h1> Create a Client </h1>
+<div>"Please fill this form to create a client"</div>
+<p>---------------------------------------------------------------------------</p>
+<div>
+  <form [formGroup]="clientForm">
+    <div class="form-group">
+      <table>
+        <tr>
+          <td> Enter your full name </td>
+
+          <td><input id="cname" formControlName="cname" type="text" /></td>
+          <div class="error-messages">
+            <ng-container *ngFor="let error of error_messages.cname">
+              <div class="error-message"
+                *ngIf="clientForm.get('cname')?.hasError(error.type) ">
+                {{ error.message }}
+              </div>
+            </ng-container>
+          </div>
+        </tr>
+        <tr>
+          <td> Enter your Email ID</td>
+          <td><input formControlName="cemail" id="cemail" type="email" /></td>
+          <div class="error-messages">
+            <ng-container *ngFor="let error of error_messages.cemail">
+              <div class="error-message" *ngIf="clientForm.get('cemail')?.hasError(error.type) ">
+                {{ error.message }}
+              </div>
+            </ng-container>
+          </div>
+        </tr>
+        <tr>
+          <td>
+            Enter your Address </td>
+          <td><input formControlName="Address" id="Address" type="text" /></td>
+          <div class="error-messages">
+            <ng-container *ngFor="let error of error_messages.Address">
+              <div class="error-message" *ngIf="clientForm.get('Address')?.hasError(error.type) ">
+                {{ error.message }}
+              </div>
+            </ng-container>
+          </div>
+        </tr>
+        <tr>
+          <td>
+            Enter your Password </td>
+          <td><input formControlName="Pass1" type="text" id="Pass1" /></td>
+        </tr>
+        <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.Pass1">
+            <div class="error-message"
+              *ngIf="clientForm.get('Pass1')?.hasError(error.type) ">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div>
+        <tr>
+          <td>
+            Re enter your Password </td>
+          <td><input formControlName="Pass2" type="text" id="Pass2" /></td>
+          <div class="error-messages">
+            <ng-container *ngFor="let error of error_messages.Pass2">
+              <div class="error-message"
+                *ngIf="clientForm.get('Pass2')?.hasError(error.type)">
+                {{ error.message }}
+              </div>
+            </ng-container>
+          </div>
+          <pre>
+          Form Error - {{ clientForm.errors | json }}
+        </pre>
+        </tr>
+        <tr>
+
+          <button (click)="addClient()" class="btn btn-primary">Add Client</button>
+        </tr>
+
+      </table>
+    </div>
+  </form>
+</div>
